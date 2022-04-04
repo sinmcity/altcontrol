@@ -1,0 +1,425 @@
+if game:GetService('Players'):FindFirstChild(mainacc) then
+    print('found player')
+else
+    rconsolewarn(mainacc.." Instance wasnt found!")
+    return
+end
+
+local LPlayer = game:GetService('Players')[mainacc]
+noclip = true
+
+
+if game:GetService('Players').LocalPlayer == LPlayer then
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "WORKED!";
+        Text = "YOU ARE ON A MAIN, CREDITS TO Re1nhar790";
+        Duration = 16;
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"
+    })
+else
+local ALT = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local ImageLabel_2 = Instance.new("ImageLabel")
+
+
+ALT.Name = "ALT"
+ALT.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ALT.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ALT
+Frame.BackgroundColor3 = Color3.fromRGB(103, 103, 103)
+Frame.Position = UDim2.new(-0.00377643481, 0, -0.293251544, 0)
+Frame.Size = UDim2.new(1.00377643, 0, 1.29325151, 0)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TextLabel.Position = UDim2.new(0.190368697, 0, 0.354838669, 0)
+TextLabel.Size = UDim2.new(0.613243043, 0, 0.0834914595, 0)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "THIS IS AN ALT ACCOUNT"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TextLabel_2.Position = UDim2.new(0.282167047, 0, 0.501897454, 0)
+TextLabel_2.Size = UDim2.new(0.435665905, 0, 0.0986717269, 0)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "PEFORMANCE MODE SAVING C/GPU"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TextLabel_3.Position = UDim2.new(0.214446962, 0, 0.8092978, 0)
+TextLabel_3.Size = UDim2.new(0.570353627, 0, 0.113851994, 0)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "ALT CONTROL MADE BY Re1nhar790"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.Position = UDim2.new(0.00376222655, 0, 0.599620521, 0)
+ImageLabel.Size = UDim2.new(0.197140709, 0, 0.229601517, 0)
+ImageLabel.Image = "rbxassetid://6736138123"
+
+ImageLabel_2.Parent = Frame
+ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.Position = UDim2.new(0.803611755, 0, 0.61195451, 0)
+ImageLabel_2.Size = UDim2.new(0.197140709, 0, 0.229601517, 0)
+ImageLabel_2.Image = "rbxassetid://6736138123"
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+    Title = "WORKED!";
+    Text = "YOU ARE AN ALT";
+    Duration = 16;
+    Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"
+})
+end
+
+
+LPlayer.Chatted:Connect(function(msg)
+	msg = msg:lower()
+
+	if string.sub(msg,1,3) == '/e ' then
+		msg = string.sub(msg,4)
+	end
+
+	if string.sub(msg,1,1) == prefix then
+		cmd = nil
+		local space = string.find(msg,' ')
+
+	if space then
+		cmd = string.sub(msg,2,space-1)
+	else
+		cmd = string.sub(msg,2)
+	end	
+
+
+	if cmd == 'bring' then
+		local p1 = game:GetService('Players').LocalPlayer.Character.HumanoidRootPart
+        local p2 = mainacc
+
+        p1.CFrame = game:GetService('Players')[p2].Character.HumanoidRootPart.CFrame
+    end
+
+	if cmd == 'chat' then
+        if game:GetService('Players').LocalPlayer == LPlayer then
+            return
+        else
+            local args = {[1] = mainmsg, [2] = "All"}
+            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+        end
+	end
+
+	if cmd == 'sit' then
+        if game:GetService('Players').LocalPlayer == LPlayer then
+        return
+            else
+            game:GetService('Players').LocalPlayer.Character.Humanoid.Sit = true
+        end
+    end
+
+	if cmd == 'unsit' then
+        game:GetService('Players').LocalPlayer.Character.Humanoid.Sit = false
+    end 
+
+	if cmd == 'reset' then
+        if game:GetService('Players').LocalPlayer == LPlayer then
+            return
+        else
+            game:GetService('Players').LocalPlayer.Character.Humanoid.Health = 0
+        end
+    end
+
+	if cmd == 'leave' then
+        if game:GetService('Players').LocalPlayer == LPlayer then
+            return
+        else
+            game:Shutdown()        
+        end
+    end
+
+    if cmd == 'float' then
+        if game:GetService('Players').LocalPlayer == LPlayer then
+            return
+        else
+            for i, player in ipairs(game:GetService('Players'):GetPlayers()) do -- use GetPlayers()
+                player.Character.HumanoidRootPart.CFrame = CFrame.new(player.Character.HumanoidRootPart.Position + Vector3.new(0, 10, 0))
+            end
+            wait(0.2)
+            game:GetService('Players').LocalPlayer.Character.Head.Anchored = true        
+        end
+    end
+
+    if cmd == 'unfloat' then
+        if game:GetService('Players').LocalPlayer == LPlayer then
+            return
+        else
+            for i, player in ipairs(game:GetService('Players'):GetPlayers()) do -- use GetPlayers()
+                player.Character.HumanoidRootPart.CFrame = CFrame.new(player.Character.HumanoidRootPart.Position + Vector3.new(0, 10, 0))
+            end
+           wait(0.2)
+           game:GetService('Players').LocalPlayer.Character.Head.Anchored = false    
+        end
+    end
+
+     if cmd == 'say' then
+        if game:GetService('Players').LocalPlayer == LPlayer then
+            return
+        else
+            local var = string.sub(msg,space+1)
+		    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(var, "All")
+        end
+    end
+
+    if cmd == 'goto' then
+        if game:GetService('Players').LocalPlayer == LPlayer then
+            return
+        else
+        local var = string.sub(msg,space+1)
+		local target = GetPlayer(var)
+		local cords = target.Character.HumanoidRootPart.Position
+		    
+	    local New_CFrame = CFrame.new(cords)
+		    
+		local ts = game:GetService('TweenService')
+        local char = game:GetService('Players').LocalPlayer.Character
+            
+        local part = char.HumanoidRootPart
+        local ti = TweenInfo.new(1, Enum.EasingStyle.Quad)
+        local tp = {CFrame = New_CFrame}
+
+        ts:Create(part, ti, tp):Play()
+        end
+    end
+
+    if cmd== 'noclip' then
+        local char = game:GetService('Players').LocalPlayer.Character 
+
+        while true do 
+            if noclip == true then 
+                for _,v in pairs(char:GetChildren()) do 
+                        if v.ClassName == "Part" then 
+                            v.CanCollide = false 
+                        elseif v.ClassName == "Model" then 
+                            v.Head.CanCollide = false 
+                        end 
+                    end 
+                end 
+            game:GetService("RunService").Stepped:Wait() 
+        end
+    end
+
+    if cmd == 'unclip' then
+        noclip = false
+        local cords2 = game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.Position
+        game:GetService('Players').LocalPlayer.Character.Humanoid.Health = 0
+        wait(5.4)
+        game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(cords2)
+    end
+
+    if cmd == 'roast' then
+        if game:GetService('Players').LocalPlayer == LPlayer then
+            return
+        else
+            local Roast = {"You bring everyone so much joy! You know, when you leave the room. But, still",
+            "If your brain was dynamite, there wouldn’t be enough to blow your hat off.",
+            "You are like a cloud. When you disappear, it’s a beautiful day.",
+            "I thought of you today. It reminded me to take out the trash.",
+            "Don’t be ashamed of who you are. That’s your parent’s job.",
+            "You’re my favorite person… besides every other person I’ve ever met.",
+            "You are proof that evolution can go in reverse.",
+            "If I throw a stick, will you leave?",
+            "Were you born this stupid or did you take lessons?",
+            "You are proof that god has a sense of humour.",
+            "if i had a face like yours, id sue my parents",
+            "If I had a dollar every time you shut up, I would give it back as a thank you.",
+            "Yes, I’m fully vaccinated, but I will still not hang out with you.",
+            "Earth is full. Go home.",
+            "A glowstick has a brighter future than you. Lasts longer in bed, too.",
+            "Taking a picture of you would put a virus on my phone",
+        }
+
+        local Result = Roast[math.random(1, #Roast)]
+        game:GetService('ReplicatedStorage').DefaultChatSystemChatEvents.SayMessageRequest:FireServer(Result,"All")   
+        end
+    
+    end
+
+    if cmd == 'love' then
+        if game:GetService('Players').LocalPlayer == LPlayer then
+            return
+        else
+            local love = {"You just light up the room.",
+            "You are more fun than anyone or anything I know, including bubble wrap.",
+            "Your inside is even more beautiful than your outside.",
+            "You inspire me.",
+            "You are the reason I am smiling today.",
+            "I bet you make small animals happy.",
+            "Colors seem brighter when you're around.",
+            "Your eyes are breathtaking.",
+            "On a scale from 1 to 10, you're an 11.",
+            "You are an incredible human.",
+            "Thank you for being you.",
+        }
+
+        local Result1 = love[math.random(1, #love)]
+        game:GetService('ReplicatedStorage').DefaultChatSystemChatEvents.SayMessageRequest:FireServer(Result1,"All")
+        end
+    end
+
+if cmd == 'gr1' then
+        local a = game
+        local b = a.Workspace
+        local c = a.Lighting
+        local d = b.Terrain
+        d.WaterWaveSize = 0
+        d.WaterWaveSpeed = 0
+        d.WaterReflectance = 0
+        d.WaterTransparency = 0
+        c.GlobalShadows = false
+        c.FogEnd = 9e9
+        c.Brightness = 0
+    
+        settings().Rendering.QualityLevel = "Level01"
+    
+    for e, f in pairs(a:GetDescendants()) do
+        if f:IsA("Part") or f:IsA('UnionOperation') or f:IsA("CornerWedgePart") or f:IsA("TrussPart") then
+            f.Material = "Plastic"
+            f.Reflectance = 0
+        elseif f:IsA("Decal") or f:IsA("Texture") then
+            f.Transparency = 0
+        elseif f:IsA("ParticleEmitter") or f:IsA("Trail") then
+            f.Lifetime = NumberRange.new(0)
+        elseif f:IsA("Explosion") then
+            f.BlastPressure = 0
+            f.BlastRadius = 0
+        elseif f:IsA("Fire") or f:IsA("SpotLight") or f:IsA("Smoke") or f:IsA("Sparkles") then
+            f.Enabled = false
+        elseif f:IsA("MeshPart") then
+            f.Material = "Plastic"
+            f.Reflectance = 0
+            f.TextureID = 10385902758728957
+        end
+    end
+    
+    for e, g in pairs(c:GetChildren()) do
+        if g:IsA("BlurEffect") or g:IsA("SunRaysEffect") or g:IsA("ColorCorrectionEffect") or g:IsA("BloomEffect") or g:IsA("DepthOfFieldEffect") then
+            g.Enabled = false
+        end
+    end
+
+    sethiddenproperty(game.Lighting, "Technology", "Compatibility")
+end
+
+if cmd == 'gr2' then
+    for _,v in pairs(workspace:GetDescendants()) do
+        if v.ClassName == "Part" or v.ClassName == "SpawnLocation" or v.ClassName == "WedgePart" or v.ClassName == "Terrain" or v.ClassName == "MeshPart" then
+            v.BrickColor = BrickColor.new(155, 155, 155)
+            v.Material = "Plastic"      
+        end
+    end
+    for _,v in pairs(workspace:GetDescendants()) do
+        if v.ClassName == "Decal" or v.ClassName == "Texture" then
+            v:Destroy()
+        end
+    end
+end
+
+if cmd == 'commands' or cmd == 'command' then
+    if game:GetService('Players').LocalPlayer == LPlayer then
+        return
+    else
+    local ya = '\n\n.goto [player name here]-goes to player\n.bring -teleports alts to you\n.chat -says the mainmsg you put \n.sit -sits alts\n.unsit -unsits alts\n.reset -resets alts\n.leave -makes alts leave\n.float -floats alts\n.unfloat -unfloats alts\n.say -makes alts say message\n.noclip -phase trugh walls\n.unclip -no noclip\n.roast -roast people with custum text \n.love -Love and compliments\n.gr1 -reduces grapics on alts more cpu power and gpu\n.gr2 -same as gr1 just much more\n.fpscap [number here] -caps fps at the number you want it to be\n.unrender -REALLY good for performance\n.render -renders stuff\n\n\n ^COMMANDS ON TOP^\n\n'
+    print(ya)
+    end
+end
+
+if cmd == 'fpscap' then
+    local cap = string.sub(msg,space+1)
+    local fps = cap
+    local clock = tick()
+
+while true do
+    while clock + 1/fps > tick() do end
+        wait()
+        clock = tick()
+    end
+end
+
+if cmd == 'unrender' then
+    game:GetService("RunService"):Set3dRenderingEnabled(false)
+end
+
+if cmd == 'render' then
+    game:GetService("RunService"):Set3dRenderingEnabled(true)
+end
+
+function GetPlayer(String)
+    local plr
+
+    local strl = String:lower()
+        for i, v in pairs(game:GetService('Players'):GetPlayers()) do
+            if v.Name:lower():sub(1, #String) == String:lower() then
+                plr = v
+            end 
+        end
+        if String == 'me' then
+                plr = game:GetService('Players').LocalPlayer
+            end
+        if String == '' or String == ' ' then
+           plr = nil
+        end
+    return plr
+    end
+end
+end)
+
+
+if renderalts == true then
+    if game:GetService('Players').LocalPlayer == LPlayer then
+        return
+    else
+        game:GetService("RunService"):Set3dRenderingEnabled(false)
+
+        for _,v in pairs(workspace:GetDescendants()) do
+            if v.ClassName == "Part" or v.ClassName == "SpawnLocation" or v.ClassName == "WedgePart" or v.ClassName == "Terrain" or v.ClassName == "MeshPart" then
+            v.BrickColor = BrickColor.new(155, 155, 155)
+            v.Material = "Plastic"
+            end
+        end
+            
+        for _,v in pairs(workspace:GetDescendants()) do
+            if v.ClassName == "Decal" or v.ClassName == "Texture" then
+            v:Destroy()
+            end
+        end
+
+        local fps = 30
+        local clock = tick()
+    
+        while true do
+        while clock + 1/fps > tick() do end
+            wait()
+            clock = tick()
+        end
+    end
+end
